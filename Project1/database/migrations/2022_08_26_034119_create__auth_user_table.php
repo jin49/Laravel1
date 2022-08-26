@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,6 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
+    //ユーザー用のモデル
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {

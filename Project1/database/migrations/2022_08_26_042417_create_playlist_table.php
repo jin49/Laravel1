@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('playlists', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreignId('user_id') // user_id というカラムを作成
+            ->constrained('users');  // テーブル名を指定
+
+            $table->foreignId('music_id') // user_id というカラムを作成
+            ->constrained('musics');  // テーブル名を指定
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('playlists');
     }
 };
