@@ -41,4 +41,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function playlist(){
+        return $this->hasMany('App\Models\Playlist');
+    }
+    public function favorite(){
+        return $this->hasMany('App\Models\Favorite');
+    }
+    public function follow_album(){
+        return $this->hasMany('App\Models\Follow_album');
+    }
+    public function follow_artist(){
+        return $this->hasMany('App\Models\Follow_artist');
+    }
+
 }

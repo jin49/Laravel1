@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\UserFormController;
-use App\Models\ArtistFormController;
-use App\Models\MusicFormController;
+use App\Http\Controllers\UserFormController;
+use App\Http\Controllers\ArtistFormController;
+use App\Http\Controllers\MusicFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,10 +25,13 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/User', [UserFormController::class, 'index']);
+Route::get('/MusicApp', [UserFormController::class, 'index']);
+
 
 
 Route::get('/Artist', [ArtistFormController::class, 'index']);
+
+
 
 Route::get('/Music', [MusicFormController::class, 'index']);
 
