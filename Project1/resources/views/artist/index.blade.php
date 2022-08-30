@@ -7,6 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>アーティスト一覧</h1>
+    <h3>{{$artist->name}}</h3>
+    <a href="/">ホームへ</a>
+    <h5>楽曲</h5>
+    @foreach($artist->music as $m)
+        <p>{{$m->name}}/画像</p>
+        <audio controls src="http://localhost{{$m->data}}">
+        <p>※このブラウザには対応していません</p>
+        </audio>
+    @endforeach
+    <h5>アルバム</h5>
+    @foreach ($artist->album as $a)
+    <a href="/Album/{{$a->id}}">
+        {{$a->name}}/画像
+    </a>
+    <br>
+
+    @endforeach
 </body>
 </html>

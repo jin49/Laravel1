@@ -24,13 +24,19 @@ class FollowTableSeeder extends Seeder
                 ['user_id' => 2,'album_id' => 2],
                 ['user_id' => 3,'album_id' => 1],
                 ['user_id' => 3,'album_id' => 3],
+
+                ['user_id' => 5,'album_id' => 1],
+                ['user_id' => 5,'album_id' => 3],
             ]
         );
         DB::table('follow_artists')->insert(
             [
-                ['user_id' => 1,'artist_id' => 3],
-                ['user_id' => 2,'artist_id' => 2],
-                ['user_id' => 3,'artist_id' => 1],
+                // ['user_id' => 1,'artist_id' => 3],
+                // ['user_id' => 2,'artist_id' => 2],
+                // ['user_id' => 3,'artist_id' => 1],
+
+                // ['user_id' => 5,'artist_id' => 2],
+                // ['user_id' => 5,'artist_id' => 1],
             ]
         );
     }
