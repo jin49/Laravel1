@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('temp.common')
+
+@section('contents')
     <h3>以下のプレイリストを削除します</h3>
     <h5>{{$playlist->name}}</h5>
     <h5>楽曲</h5>
@@ -19,5 +13,4 @@
         @csrf
     </form>
     <button type="button" onClick="history.back()">戻る</button>
-</body>
-</html>
+    @endsection

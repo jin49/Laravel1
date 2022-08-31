@@ -11,7 +11,7 @@ class UserFormController extends Controller
 {
     //
     public function index(){
-        $playlist = Playlist::where('user_id','=',Auth::id())->get();
-        return view('user.index',compact('playlist'));
+        // $playlist = Playlist::where('user_id','=',Auth::id())->get();
+        return view('user.index');
     }
 }

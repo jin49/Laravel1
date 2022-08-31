@@ -1,24 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h3>{{$album->name}}/画像</h3>
+@extends('temp.common')
+
+@section('contents')
+<img id = "human-img" src="{{$album->image}}" alt="">
+    <h3>{{ $album->name }}</h3>
     <h5>
-        <a href="/Artist/{{$album->artist->id}}">{{$album->artist->name}}</a>
+        <a class = "move" href="/Artist/{{ $album->artist->id }}">{{ $album->artist->name }}</a>
     </h5>
     <br><br>
     <h5>楽曲</h5>
-    @foreach($album->albumlist as $music)
-    <p>{{$music->music->name}}/画像</p>
-    <audio controls src="http://localhost{{$music->music->data}}">
-    <p>※このブラウザには対応していません</p>
-    </audio>
-    <br>
-    @endforeach
-</body>
-</html>
+    <table>
+        <tr>
+            <td></td>
+            <td>楽曲</td>
+            <td></td>
+            <td></td>
+        </tr>
+        @foreach ($album->albumlist as $music)
+            <tr>
+                <td><img src="{{ $music->music->image }}" alt=""></td>
+                <td>{{ $music->music->name }}</td>
+                <td>
+                    <audio controls src="http://localhost{{ $music->music->data }}">
+                        <p>※このブラウザには対応していません</p>
+                    </audio>
+                </td>
+                <td><a href="/Music/add/{{ $music->music->id }}">【プレイリストに追加】</a></td>
+                @isset(Auth::user()->admin)
+                <td><a href="/Music/edit/{{ $music->music->id }}">【編集】</a></td>
+                @endisset
+            </tr>
+
+            <br>
+        @endforeach
+    </table>
+@endsection

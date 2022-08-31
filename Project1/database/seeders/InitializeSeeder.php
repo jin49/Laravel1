@@ -24,67 +24,79 @@ class InitializeSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('musics')->insert(
-        //     [
-        //         ['id' => 1, 'name' => '楽曲１','data' => 'test1.mp4','artist_id' => 1],
-        //         ['id' => 2,'name' => '楽曲２','data' => 'test2.mp4','artist_id' => 2],
-        //         ['id' => 3,'name' => '楽曲３','data' => 'test3.mp4','artist_id' => 3],
-        //         ['id' => 4,'name' => '楽曲４','data' => 'test1.mp4','artist_id' => 1],
-        //         ['id' => 5,'name' => '楽曲５','data' => 'test2.mp4','artist_id' => 2],
-        //         ['id' => 6,'name' => '楽曲６','data' => 'test3.mp4','artist_id' => 3],
-        //         ['id' => 7,'name' => '楽曲７','data' => 'test1.mp4','artist_id' => 1],
-        //         ['id' => 8,'name' => '楽曲８','data' => 'test2.mp4','artist_id' => 2],
-        //         ['id' => 9,'name' => '楽曲９','data' => 'test3.mp4','artist_id' => 3],
+        $index = 1;
+        $max_artist = 3;
+        $max_album = 6;
+        $max_music = 10;
+        // for ($j = 1; $j < 4; $j++) {
+        //     $data = file_get_contents('https://placeimg.com/640/480/people');
 
-        //     ]
-        // );
-        // DB::table('playlists')->insert(
-        //     [
-        //         ['id' => 1,'name' => 'プレイリスト１','user_id' => 1],
-        //         ['id' => 2,'name' => 'プレイリスト１','user_id' => 2],
-        //         ['id' => 3,'name' => 'プレイリスト１','user_id' => 3],
-        //         // ['id' => 4,'name' => 'プレイリスト２','user_id' => 4],
-        //         ['id' => 5,'name' => 'プレイリスト２','user_id' => 1],
-        //         ['id' => 6,'name' => 'プレイリスト２','user_id' => 2],
-        //         ['id' => 7,'name' => 'プレイリスト２','user_id' => 3],
-        //         // ['id' => 8,'name' => 'プレイリスト２','user_id' => 4],
-        //         ['id' => 9,'name' => 'プレイリスト２','user_id' => 5],
-        //     ]
-        // );
-        // DB::table('musiclists')->insert(
-        //     [
-        //         ['id' => 1,'playlist_id' => 9,'music_id' => 1],
-        //         ['id' => 2,'playlist_id' => 9,'music_id' => 2],
-        //         ['id' => 3,'playlist_id' => 9,'music_id' => 3],
-        //         // ['id' => 4,'playlist_id' => 9,'music_id' => 4],
-        //     ]
+        //     $filename = chr(mt_rand(97, 122));
+        //     for ($i = 0; $i < 5; $i++) {
+        //         $filename .= chr(mt_rand(97, 122));
+        //     }
+        //     file_put_contents('storage/app/public/image/' . $filename . ".jfif", $data);
+        //     DB::table('artists')->insert(
+        //         [
+        //             ['id' => $j,'name' => "アーティスト($filename)", 'image' => "/image/$filename.jfif"]
+        //         ]
         //     );
-        // DB::table('favorites')->insert(
-        //     [
-        //         ['user_id' => 1,'music_id' => 4],
-        //         ['user_id' => 2,'music_id' => 9],
-        //         ['user_id' => 3,'music_id' => 8],
-        //         ['user_id' => 1,'music_id' => 1],
-        //         ['user_id' => 2,'music_id' => 2],
-        //         ['user_id' => 3,'music_id' => 3],
+        //     $max++;
+        // }
+        // $index = 1;
+        // for ($j = 1; $j < 11; $j++) {
+        //     $data = file_get_contents('https://placeimg.com/640/480/animals');
 
-        //         ['user_id' => 5,'music_id' => 2],
-        //         ['user_id' => 5,'music_id' => 3],
-        //     ]
-        // );
-        // DB::table('album')->insert(
-        //     [
-        //         ['id' => 1,'name' => 'アルバム１','artist_id' => 1],
-        //         ['id' => 2,'name' => 'アルバム２','artist_id' => 1],
-        //     ]
-        // );
+        //     $filename = chr(mt_rand(97, 122));
+        //     for ($i = 0; $i < 10; $i++) {
+        //         $filename .= chr(mt_rand(97, 122));
+        //     }
+        //     file_put_contents('storage/app/public/image/' . $filename . ".jfif", $data);
+        //     DB::table('musics')->insert(
+        //         [
+        //             ['id' => $j,'image' => '/image/' . $filename . ".jfif", 'name' => '楽曲(' . $filename . ")", 'data' => 'test1.mp4', 'artist_id' =>$index],
+        //         ]
+        //     );
+        //     if($index == $max_artist){
+        //         $index = 1;
+        //     }else{
+        //         $index++;
+        //     }
+        // }
+
+        // $index = 1;
+        // for ($j = 1; $j < $max_album + 1; $j++) {
+        //     $data = file_get_contents('https://placeimg.com/640/480/nature');
+        //     $filename = chr(mt_rand(97, 122));
+        //     for ($i = 0; $i < 5; $i++) {
+        //         $filename .= chr(mt_rand(97, 122));
+        //     }
+            // file_put_contents('storage/app/public/image/' . $filename . ".jfif", $data);
+        //     DB::table('album')->insert(
+        //         [
+        //             ['id' => $j, 'image' => '/image/' . $filename . ".jfif", 'name' => "アルバム($filename)", 'artist_id' => $index],
+        //         ]
+        //     );
+
+        //     if ($index == $max_artist) {
+        //         $index = 1;
+        //     } else {
+        //         $index++;
+        //     }
+        // }
+
         DB::table('albumlists')->insert(
             [
-                ['id' => 1,'music_id' => 1,'album_id' => 1],
-                ['id' => 2,'music_id' => 2,'album_id' => 1],
-                ['id' => 3,'music_id' => 3,'album_id' => 1],
-                ['id' => 4,'music_id' => 6,'album_id' => 2],
-                ['id' => 5,'music_id' => 8,'album_id' => 2],
+                ['music_id' => 1,'album_id' => 1],
+                ['music_id' => 2,'album_id' => 2],
+                ['music_id' => 3,'album_id' => 3],
+                ['music_id' => 4,'album_id' => 4],
+                ['music_id' => 5,'album_id' => 5],
+                ['music_id' => 6,'album_id' => 6],
+                ['music_id' => 7,'album_id' => 1],
+                ['music_id' => 8,'album_id' => 2],
+                ['music_id' => 9,'album_id' => 3],
+                ['music_id' => 10,'album_id' => 4],
 
             ]
             );
